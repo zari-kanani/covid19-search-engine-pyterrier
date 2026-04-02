@@ -23,23 +23,6 @@ The dataset (`covid_df.csv`) contains COVID-19 scientific articles with the foll
 | `Abstract` | Article abstract |
 | `Year` | Publication year |
 
-## Project Structure
-
-```
-covid19-search-engine/
-├── covid19_search_engine_pyterrier.ipynb   # Main notebook
-├── covid_df.csv                            # Dataset
-├── requirements.txt                        # Python dependencies
-└── README.md
-```
-
-## Key Concepts Covered
-
-### Index Structures
-- **Meta index** — stores document-level metadata (docno, title, abstract)
-- **Lexicon** — stores all indexed terms and their corpus-wide statistics
-- **Inverted index** — maps each term to the list of documents containing it
-
 ### Retrieval Models
 
 | Model | Description |
@@ -48,39 +31,6 @@ covid19-search-engine/
 | **TF-IDF** | Weighs frequency against term rarity across the corpus |
 | **BM25** | Extends TF-IDF with document length normalization |
 
-### Text Preprocessing
-Queries are preprocessed through the same pipeline used during indexing:
-- Tokenization
-- Stemming (Porter Stemmer)
-- Stopword removal
-
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/covid19-search-engine.git
-cd covid19-search-engine
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-> **Note:** PyTerrier requires Java. Make sure you have **Java 11+** installed on your system.  
-> Check with: `java -version`
-
-### 3. Run the notebook
-
-Open the notebook in Jupyter or Google Colab:
-
-```bash
-jupyter notebook covid19_search_engine_pyterrier.ipynb
-```
-
-Or open directly in [Google Colab](https://colab.research.google.com/) and upload `covid_df.csv` when prompted.
 
 ## Example Usage
 
@@ -108,15 +58,3 @@ Comparing the three models on the query `"clinical trials in covid"`:
 - **TF-IDF** — reduces weight of common terms; more discriminative results.
 - **BM25** — balances term frequency with document length normalization; most balanced and widely used in practice.
 
-## Dependencies
-
-See [`requirements.txt`](requirements.txt) for the full list. Main libraries:
-
-- `python-terrier` — indexing and retrieval
-- `pandas`, `numpy` — data manipulation
-- `nltk` — text preprocessing
-- `matplotlib` — visualization
-
-## License
-
-This project is for educational purposes. The dataset is derived from publicly available COVID-19 research literature.
