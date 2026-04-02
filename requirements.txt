@@ -1,0 +1,5 @@
+python-terrier
+pandas
+numpy
+matplotlib
+nltk
